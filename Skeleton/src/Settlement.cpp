@@ -3,7 +3,12 @@
 
 Settelment::Settlement(const string &name, SettlementType type)
 :name(name), type(type){
-} //בנאי ריק דיפולטיבי סימןשאלה
+switch (type){
+        case SettlementType::VILLAGE: limit = 1; break;
+        case SettlementType::CITY: limit = 2; break;
+        case SettlementType::METROPOLIS: limit = 3;
+    }
+} 
 
  const string &Settlement::getName() const{
     return name;
@@ -23,4 +28,8 @@ Settelment::Settlement(const string &name, SettlementType type)
 
  const string Settlement::toString() const{
     return "Settlement:" + name + "Type:" + SettlementTypeToString(type);
+ }
+
+ const int Settlement::getLimit(){
+   return limit;
  }

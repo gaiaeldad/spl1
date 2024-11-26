@@ -4,6 +4,9 @@
 #include "Settlement.h"
 #include "SelectionPolicy.h"
 using std::vector;
+using std::cout;
+using std::endl:
+
 
 enum class PlanStatus {
     AVALIABLE,
@@ -22,6 +25,7 @@ class Plan {
         const vector<Facility*> &getFacilities() const;
         void addFacility(Facility* facility);
         const string toString() const;
+        void scoreUpdate(Facility* facility);//we added this method 
 
     private:
         int plan_id;
